@@ -1,0 +1,32 @@
+ALGORITHM cards_game
+VAR
+    arr[]: Array
+    i, j, key, n: Integer
+
+BEGIN
+
+    arr := [5, 3, 8, 1, 2]
+
+    n := length(arr)
+
+    FOR i FROM 1 TO n - 1 DO
+        key := arr[i] 
+        j := i - 1     
+       
+        WHILE j >= 0 AND arr[j] > key DO
+            arr[j + 1] := arr[j]
+            j := j - 1
+        END WHILE
+
+        
+        arr[j + 1] := key
+    END FOR
+
+    FOR i FROM 0 TO n - 1 DO
+        Write(arr[i])
+        IF i < n - 1 THEN
+            Write(", ")
+
+    END FOR
+    Write(sorted array)
+END ALGORITHM
